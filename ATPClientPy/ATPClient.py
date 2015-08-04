@@ -6,7 +6,7 @@ s = ssl.wrap_socket(s, keyfile='../keyfile', certfile='../certfile', server_side
 s.connect(('37.9.171.172', 4115))
 # s.connect(('localhost', 4115))
 
-message = '''ATP/0.1\nTALK TO THE HAND\nI NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE\nYOU HAVE BEEN TERMINATED\n\r\n'''
+message = '''ATP/0.1\nTALK TO THE HAND\nI NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE\nYOU HAVE BEEN TERMINATED\n'''
 
 s.send(message.encode())
 

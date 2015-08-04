@@ -27,7 +27,7 @@ int main(int argc, char* argv[])
 
     boost::asio::ssl::context ctx(boost::asio::ssl::context::tlsv12);
     ctx.use_rsa_private_key_file("../keyfile", boost::asio::ssl::context::pem);
-    ctx.use_certificate_chain_file("../certfile");
+    ctx.use_certificate_file("../certfile", boost::asio::ssl::context::pem);
 
     ATPClient c(io_service, ctx, iterator);
 

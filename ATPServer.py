@@ -9,7 +9,7 @@ logging.basicConfig(filename="ATPServer.log",
                     format='%(name)s: %(message)s',
                     )
 
-EMAIL = "test@test.test"
+EMAIL = "robert.szomolanyi@erstegroupit.com"
 
 class ATPRequestHandler(socketserver.BaseRequestHandler):
 

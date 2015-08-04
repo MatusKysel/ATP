@@ -37,7 +37,6 @@ void ATPClient::handle_handshake(const boost::system::error_code& error)
     request_stream << "TALK TO THE HAND\n";
     request_stream << "I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE\n";
     request_stream << "YOU HAVE BEEN TERMINATED\n";
-    request_stream << "\r\n";
 
     boost::asio::async_write(socket_,
                              request_,
@@ -54,7 +53,7 @@ void ATPClient::handle_write(const boost::system::error_code& error)
 {
   if (!error)
   {
-    boost::asio::async_read_until(socket_, response_, "\r\n",
+    boost::asio::async_read_until(socket_, response_, "YOU HAVE BEEN TERMINATED",
                                   boost::bind(&ATPClient::handle_read, this,
                                               boost::asio::placeholders::error));
   }
