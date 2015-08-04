@@ -1,0 +1,43 @@
+########## TODO ##########
+Ulohou je implementovat asynchornneho ATP klienta v jazyku C++ 
+s vyuzitim kniznic Boost Asio a OpenSSL. Pri jeho implementacii 
+je dolezite dodrziavat paradigmu OOP. 
+Komunikacia so server je mozna len pomocou TCP socketov so 
+zapnutym ssl sifrovanim. Na nadviazanie spojenia vam posluzia 
+prilozene subory (kluc, cartifikat). 
+Nasledne je potrebne vyskaldat korektnu ATP poziadavku na server,
+ktory vam vrati email. Na tento email je potrebne zaslat vase CV a 
+zdrojove kody vasho riesenia.
+
+(Optional) Mozete zaslat aj riesenie v Pythone
+
+########### SPECIFIKACIE ##########
+host: 37.9.171.172
+port: 4115
+format certifikatu/kluca: PEM
+ssl_protokol: TLSv1_2
+
+########### ATP (aka Arnold Transfer Protocol) #############
+Kazda sprava v tomto protokole je jednoznacne identifikovatelna tym,
+ze zacina nazvom protokolu a jeho verziou, tj. "ATP/0.1"
+Korektna poziadavka na server musi obsahovat pole "I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE"
+Server odpoveda "NO PROBLEMO" v pripade, ak je poziadavka korektna a za touto frazou nasleduje text spravy. V pripade chyby server vracia "HASTA LA VISTA, BABY!".
+
+Dalej platia nasledujuce pravidla:
+	-kazda sprava sa musi zacinat "TALK TO THE HAND"
+	-kazda sprava musi byt ukoncena "YOU HAVE BEEN TERMINATED"
+	-kazde pole spravy musi byt oddelene "\n"
+
+Priklad poziadavky (obsahuje nasledujuce polia):
+	-nazov protokolu a jeho verzie
+	-zaciatok spravy
+	-pole poziadavky
+	-koniec spravy
+
+Priklad odpovede (obsahuje nasledujuce polia):
+	-nazov protokolu a jeho verzie
+	-zaciatok spravy
+	-pole odpovede OK/NOK
+	-(telo spravy)
+	-koniec spravy
+
