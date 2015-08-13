@@ -12,7 +12,7 @@ zdrojove kody vasho riesenia.
 (Optional) Mozete zaslat aj riesenie v Pythone
 
 ########### SPECIFIKACIE ##########
-host: 37.9.171.172
+host: 188.166.28.154
 port: 4115
 format certifikatu/kluca: PEM
 ssl_protokol: TLSv1_2

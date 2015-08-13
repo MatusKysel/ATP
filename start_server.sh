@@ -14,7 +14,7 @@ start_app (){
         echo "Starting server app..."
         rm -f $LOG_FILE;
         touch $LOG_FILE;
-        $SERVER_EXEC $SERVER_APP &
+        $SERVER_EXEC $SERVER_APP 2>&1 1>output &
         echo $! > $PID_FILE;
     fi
 }
