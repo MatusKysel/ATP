@@ -59,7 +59,7 @@ class ATPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
         return
 
 if __name__ == '__main__':
-    address = ('localhost', 4115) 
+    address = ('188.166.28.154', 4115) 
     # address = ('localhost', 4115) 
     server = ATPServer(address, ATPRequestHandler, True)
     server.serve_forever()
