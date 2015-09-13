@@ -6,7 +6,7 @@ import ssl
 
 logging.basicConfig(filename="ATPServer.log",
                     level=logging.DEBUG,
-                    format='%(name)s: %(message)s',
+                    format='%(asctime)s %(name)s: %(message)s',
                     )
 
 EMAIL = "robert.szomolanyi@erstegroupit.com"
